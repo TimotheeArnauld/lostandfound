@@ -6,7 +6,7 @@ target 'lostandfound' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
-  pod "SharkORM"
+  pod 'SharkORM'
 
   target 'lostandfoundTests' do
     inherit! :search_paths
