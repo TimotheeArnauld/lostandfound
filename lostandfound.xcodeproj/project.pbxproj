@@ -16,6 +16,7 @@
 		BA2C6BBC1ECAF7E900A5FD28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2C6BBB1ECAF7E900A5FD28 /* Assets.xcassets */; };
 		BA2C6BCA1ECAF7E900A5FD28 /* lostandfoundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C6BC91ECAF7E900A5FD28 /* lostandfoundTests.swift */; };
 		BA2C6BD51ECAF7E900A5FD28 /* lostandfoundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2C6BD41ECAF7E900A5FD28 /* lostandfoundUITests.swift */; };
+		BA6BBEC31ECD95E7007520AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6BBEC21ECD95E7007520AF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		BA2C6BD01ECAF7E900A5FD28 /* lostandfoundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lostandfoundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA2C6BD41ECAF7E900A5FD28 /* lostandfoundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lostandfoundUITests.swift; sourceTree = "<group>"; };
 		BA2C6BD61ECAF7E900A5FD28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA6BBEC21ECD95E7007520AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D832292B1FDF8055EFEDC6A5 /* Pods-lostandfound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lostandfound.release.xcconfig"; path = "Pods/Target Support Files/Pods-lostandfound/Pods-lostandfound.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				BA2C6BB41ECAF7E900A5FD28 /* AppDelegate.swift */,
 				BA2C6BBB1ECAF7E900A5FD28 /* Assets.xcassets */,
 				BA2C6BC01ECAF7E900A5FD28 /* Info.plist */,
+				BA6BBEC21ECD95E7007520AF /* GoogleService-Info.plist */,
 				BA02C1C91ECB049A006A788F /* LoginViewController.swift */,
 				BA02C1CA1ECB049A006A788F /* LoginViewController.xib */,
 			);
@@ -283,6 +286,7 @@
 			files = (
 				BA02C1CC1ECB049A006A788F /* LoginViewController.xib in Resources */,
 				BA2C6BBC1ECAF7E900A5FD28 /* Assets.xcassets in Resources */,
+				BA6BBEC31ECD95E7007520AF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

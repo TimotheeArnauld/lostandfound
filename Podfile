@@ -3,10 +3,11 @@ platform :ios, '9.0'
 target 'lostandfound' do
   use_frameworks!
 
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
-  pod 'FacebookShare'
-  pod 'SharkORM'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
 
   target 'lostandfoundTests' do
     inherit! :search_paths

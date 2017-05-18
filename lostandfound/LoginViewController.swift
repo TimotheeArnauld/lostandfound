@@ -7,19 +7,27 @@
 //
 
 import UIKit
-import FacebookLogin
 
-class LoginViewController: UIViewController {
+import Firebase
+import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
+
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
+    @IBOutlet weak var signInFB: FBSDKLoginButton!
+    @IBOutlet weak var signInButton: GIDSignInButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loginButton = LoginButton(readPermissions:[ .publicProfile, .email, .userFriends ])
-        loginButton.center = view.center
-            
-        view.addSubview(loginButton)
+        GIDSignIn.sharedInstance().uiDelegate = self
+        //GIDSignIn.sharedInstance().signIn()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError?) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        // ...
     }
 }
