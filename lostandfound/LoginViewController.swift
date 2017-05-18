@@ -21,9 +21,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
         GIDSignIn.sharedInstance().uiDelegate = self
         //GIDSignIn.sharedInstance().signIn()
+        
     }
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError?) {
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result:
+        FBSDKLoginManagerLoginResult!, error: NSError?) {
         if let error = error {
             print(error.localizedDescription)
             return
