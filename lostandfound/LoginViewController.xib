@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="lostandfound" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundImage" destination="T3c-0T-MPa" id="ile-Ns-gfg"/>
+                <outlet property="login__" destination="HWH-1r-WKk" id="fhO-ps-sXG"/>
                 <outlet property="signInButton" destination="0dP-Sz-3Uw" id="5Le-CS-n1x"/>
                 <outlet property="signInFB" destination="J1W-oi-0Pk" id="pqR-om-RMR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="Ku6-bc-3tS"/>
