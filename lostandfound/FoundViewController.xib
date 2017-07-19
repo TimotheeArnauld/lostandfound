@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FoundViewController" customModule="lostandfound" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="taN-Ar-LxW" id="bn2-JS-LJL"/>
+                <outlet property="trainstation" destination="bEy-uh-2Jn" id="9Mz-ve-Ket"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,10 +21,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="taN-Ar-LxW">
-                    <rect key="frame" x="0.0" y="45" width="375" height="602"/>
+                    <rect key="frame" x="0.0" y="109" width="375" height="538"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Rechercher la gare" translatesAutoresizingMaskIntoConstraints="NO" id="bEy-uh-2Jn">
+                    <rect key="frame" x="0.0" y="38" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="58.5" y="149.5"/>

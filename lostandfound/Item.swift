@@ -7,16 +7,6 @@
 //
 
 import Foundation
-
-//
-//  Item.swift
-//  TPnote
-//
-//  Created by Thomas Fouan on 18/05/2017.
-//  Copyright © 2017 Thomas Fouan. All rights reserved.
-//
-
-import Foundation
 import MapKit
 
 class Item: NSObject {
@@ -28,8 +18,6 @@ class Item: NSObject {
     var type: String?
     var codeGare: String?
     var idGare: String?
-    
-    //var coord: CLLocationCoordinate2D?
     
     override init() {
         
@@ -44,10 +32,5 @@ class Item: NSObject {
         self.type = fields["gc_obo_type_c"] as? String
         self.codeGare = fields["gc_obo_gare_origine_r_code_uic_c"] as? String
         self.idGare = fields["id"] as? String
-        
-        //let lat = (location["lat"] as? Double)!
-        //let lng = (location["lng"] as? Double)!
-        
-        //self.coord = CLLocationCoordinate2D(latitude: lat, longitude: lng)
     }
 }

@@ -10,8 +10,10 @@ import UIKit
 
 class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var trainstation: UISearchBar!
     
     var list: [Item] = []
+    var station: String = ""
     let itemRetreiver: ItemRetriever = ItemRetriever()
     
     override func viewDidLoad() {
@@ -19,6 +21,7 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.trainstation.delegate = self
         
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "itemCell")
         getItems()
@@ -26,6 +29,14 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.station = searchText.replacingOccurrences(of: " ", with: "+")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        getItems()
     }
     
     func getItems() {
@@ -47,7 +58,7 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.tableView.reloadData()
                 })
             }
-        })
+        }, station: self.station)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,12 +71,5 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.textLabel?.text = self.list[indexPath.row].nature
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let item = self.list[indexPath.row]
-        let itemController = ItemViewController(nibName: "ItemViewController", bundle: nil, item: item)
-        
-        self.navigationController?.pushViewController(itemController, animated: true)*/
     }
 }
