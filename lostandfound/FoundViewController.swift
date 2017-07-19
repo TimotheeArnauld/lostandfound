@@ -28,6 +28,12 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.dataSource = self
         
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "itemCell")
+        getItems()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

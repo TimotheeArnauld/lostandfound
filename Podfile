@@ -8,7 +8,6 @@ target 'lostandfound' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
-  pod 'Alamofire'
 
   target 'lostandfoundTests' do
     inherit! :search_paths
