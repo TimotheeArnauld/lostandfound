@@ -16,6 +16,7 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var searchBarGare: UISearchBar!
     
     var list: [Item] = []
+    var station: String = ""
     let itemRetreiver: ItemRetriever = ItemRetriever()
     
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.trainstation.delegate = self
         
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "itemCell")
         getItems()
@@ -30,6 +32,14 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.station = searchText.replacingOccurrences(of: " ", with: "+")
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        getItems()
     }
     
     func getItems() {
@@ -52,7 +62,7 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.tableView.reloadData()
                 })
             }
-        })
+        }, station: self.station)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

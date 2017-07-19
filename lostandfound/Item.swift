@@ -28,8 +28,6 @@ class Item: NSObject {
     var codeGare: String?
     var idGare: String?
     
-    //var coord: CLLocationCoordinate2D?
-    
     override init() {
         
     }

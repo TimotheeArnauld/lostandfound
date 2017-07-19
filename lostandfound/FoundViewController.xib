@@ -13,6 +13,7 @@
                 <outlet property="searchBarDate" destination="bPf-km-PLi" id="Z4a-aB-Rzn"/>
                 <outlet property="searchBarGare" destination="bmU-H0-pEw" id="MT9-y3-OWI"/>
                 <outlet property="tableView" destination="taN-Ar-LxW" id="bn2-JS-LJL"/>
+                <outlet property="trainstation" destination="bEy-uh-2Jn" id="9Mz-ve-Ket"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
