@@ -60,17 +60,21 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier:"itemCell")
         
+        cell.detailTextLabel?.text = self.list[indexPath.row].gare
         cell.textLabel?.text = self.list[indexPath.row].nature
-        
+        cell.imageView?.image = UIImage(named: "Image")
         return cell
     }
     
+
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let item = self.list[indexPath.row]
+        let item = self.list[indexPath.row]
         let itemController = ItemViewController(nibName: "ItemViewController", bundle: nil, item: item)
         
-        self.navigationController?.pushViewController(itemController, animated: true)*/
+        self.navigationController?.pushViewController(itemController, animated: true)
     }
 }
