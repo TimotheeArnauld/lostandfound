@@ -44,13 +44,13 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
         itemRetreiver.getItems(block: { (itemList, error) in
             if(itemList != nil) {
                 self.list = []
-                let obj: AnyObject = itemList!["response"]!
-                let result: AnyObject = obj["venues"] as AnyObject
+                let obj: AnyObject = itemList!["records"]!
+                //let result: AnyObject = obj["fields"] as AnyObject
                 
-                if(!result .isKind(of: NSNull.classForCoder())) {
-                    let venues: Array = (result as! NSArray) as Array
+                if(!obj .isKind(of: NSNull.classForCoder())) {
+                    let records: Array = (obj as! NSArray) as Array
                     
-                    venues.forEach({ (object: AnyObject) in
+                    records.forEach({ (object: AnyObject) in
                         let item: Item = Item(object: object)
                         self.list.append(item)
                     })
