@@ -16,9 +16,6 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var searchBarGare: UISearchBar!
     
     var list: [Item] = []
-    var name: String = ""
-    var location: String = ""
-    
     let itemRetreiver: ItemRetriever = ItemRetriever()
     
     override func viewDidLoad() {
@@ -29,11 +26,6 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "itemCell")
         getItems()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +52,7 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.tableView.reloadData()
                 })
             }
-        }, name: self.name, location: self.location)
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
