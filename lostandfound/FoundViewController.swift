@@ -12,9 +12,6 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableView: UITableView!
     
     var list: [Item] = []
-    var name: String = ""
-    var location: String = ""
-    
     let itemRetreiver: ItemRetriever = ItemRetriever()
     
     override func viewDidLoad() {
@@ -26,11 +23,6 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "itemCell")
         getItems()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tableView.reloadData()
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,13 +32,12 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
         itemRetreiver.getItems(block: { (itemList, error) in
             if(itemList != nil) {
                 self.list = []
-                let obj: AnyObject = itemList!["response"]!
-                let result: AnyObject = obj["venues"] as AnyObject
+                let result: AnyObject = itemList!["records"]!
                 
                 if(!result .isKind(of: NSNull.classForCoder())) {
-                    let venues: Array = (result as! NSArray) as Array
+                    let fields: Array = (result as! NSArray) as Array
                     
-                    venues.forEach({ (object: AnyObject) in
+                    fields.forEach({ (object: AnyObject) in
                         let item: Item = Item(object: object)
                         self.list.append(item)
                     })
@@ -56,7 +47,7 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     self.tableView.reloadData()
                 })
             }
-        }, name: self.name, location: self.location)
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

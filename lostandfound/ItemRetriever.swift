@@ -5,7 +5,7 @@ typealias RetrieveItemsBlock = (Dictionary<String, AnyObject>?, Error?) -> Void
 class ItemRetriever: NSObject {
     static let BASE_URL: String = "https://ressources.data.sncf.com/api/records/1.0/search/?dataset=objets-trouves-gares"
     
-    func getItems(block: @escaping RetrieveItemsBlock, name: String, location: String) {
+    func getItems(block: @escaping RetrieveItemsBlock) {
         let completeURL: String = ItemRetriever.BASE_URL;
         
         
