@@ -9,7 +9,11 @@
 import UIKit
 
 class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBarDate: UISearchBar!
+    
+    @IBOutlet weak var searchBarGare: UISearchBar!
     
     var list: [Item] = []
     var name: String = ""
