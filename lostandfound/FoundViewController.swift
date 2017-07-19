@@ -60,7 +60,7 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
         
-        cell.textLabel?.text = self.list[indexPath.row].name
+        cell.textLabel?.text = self.list[indexPath.row].nature
         
         return cell
     }

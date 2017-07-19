@@ -10,6 +10,7 @@
 		4D80799A9B363102A2721AA7 /* Pods_lostandfound.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C334DC591477AFF1531251 /* Pods_lostandfound.framework */; };
 		5A3110FD7E4A77A959CDD6A2 /* Pods_lostandfoundUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8090312C06211FA8860FCDAF /* Pods_lostandfoundUITests.framework */; };
 		9826D4EFACEF3D1644CAB5A5 /* Pods_lostandfoundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072975264B201A98F0A6230F /* Pods_lostandfoundTests.framework */; };
+		A3C5EFAC1F1FF6DF00851289 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3C5EFAB1F1FF6DF00851289 /* GoogleService-Info.plist */; };
 		BA02C1CB1ECB049A006A788F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA02C1C91ECB049A006A788F /* LoginViewController.swift */; };
 		BA02C1CC1ECB049A006A788F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA02C1CA1ECB049A006A788F /* LoginViewController.xib */; };
 		BA1888481F1FB88500DFA765 /* FoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1888461F1FB88500DFA765 /* FoundViewController.swift */; };
@@ -46,6 +47,7 @@
 		6FB624E8A9767E6B8A2A4A73 /* Pods-lostandfoundTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lostandfoundTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-lostandfoundTests/Pods-lostandfoundTests.release.xcconfig"; sourceTree = "<group>"; };
 		8090312C06211FA8860FCDAF /* Pods_lostandfoundUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lostandfoundUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9347D27BBD5ABB30A1730F22 /* Pods-lostandfoundTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lostandfoundTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lostandfoundTests/Pods-lostandfoundTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3C5EFAB1F1FF6DF00851289 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B236B3F5445931BF0929CEA8 /* Pods-lostandfound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lostandfound.debug.xcconfig"; path = "Pods/Target Support Files/Pods-lostandfound/Pods-lostandfound.debug.xcconfig"; sourceTree = "<group>"; };
 		B598FA54C328A0D7140DF2E5 /* Pods-lostandfoundUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lostandfoundUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-lostandfoundUITests/Pods-lostandfoundUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BA02C1C91ECB049A006A788F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		BA2C6BB31ECAF7E900A5FD28 /* lostandfound */ = {
 			isa = PBXGroup;
 			children = (
+				A3C5EFAB1F1FF6DF00851289 /* GoogleService-Info.plist */,
 				BA2C6BB41ECAF7E900A5FD28 /* AppDelegate.swift */,
 				BA2C6BBB1ECAF7E900A5FD28 /* Assets.xcassets */,
 				BA2C6BC01ECAF7E900A5FD28 /* Info.plist */,
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA02C1CC1ECB049A006A788F /* LoginViewController.xib in Resources */,
+				A3C5EFAC1F1FF6DF00851289 /* GoogleService-Info.plist in Resources */,
 				BA2C6BBC1ECAF7E900A5FD28 /* Assets.xcassets in Resources */,
 				BA1888491F1FB88500DFA765 /* FoundViewController.xib in Resources */,
 			);
