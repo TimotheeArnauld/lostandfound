@@ -21,15 +21,15 @@ import MapKit
 
 class Item: NSObject {
     
-    var name: String?
-    var phone: String?
+    var nature: String?
+    var gare: String?
     
-    var address: String?
-    var postalCode: String?
-    var city: String?
-    var country: String?
+    var date: String?
+    var type: String?
+    var codeGare: String?
+    var idGare: String?
     
-    var coord: CLLocationCoordinate2D?
+    //var coord: CLLocationCoordinate2D?
     
     override init() {
         
@@ -39,16 +39,16 @@ class Item: NSObject {
         let contact: AnyObject = object["contact"] as AnyObject
         let location: AnyObject = object["location"] as AnyObject
         
-        self.name = object["name"] as? String
-        self.phone = contact["phone"] as? String
-        self.address = location["address"] as? String
-        self.postalCode = location["postalCode"] as? String
-        self.city = location["city"] as? String
-        self.country = location["country"] as? String
+        self.nature = object["gc_obo_nature_c"] as? String
+        self.gare = contact["gc_obo_gare_origine_r_name"] as? String
+        self.date = location["date"] as? String
+        self.type = location["gc_obo_type_c"] as? String
+        self.codeGare = location["gc_obo_gare_origine_r_code_uic_c"] as? String
+        self.idGare = location["id"] as? String
         
-        let lat = (location["lat"] as? Double)!
-        let lng = (location["lng"] as? Double)!
+        //let lat = (location["lat"] as? Double)!
+        //let lng = (location["lng"] as? Double)!
         
-        self.coord = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        //self.coord = CLLocationCoordinate2D(latitude: lat, longitude: lng)
     }
 }
