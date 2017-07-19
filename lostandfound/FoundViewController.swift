@@ -2,33 +2,73 @@
 //  FoundViewController.swift
 //  lostandfound
 //
-//  Created by Timothée Arnauld on 23/05/2017.
+//  Created by Timothée Arnauld on 19/07/2017.
 //  Copyright © 2017 Lost And Found. All rights reserved.
 //
 
 import UIKit
 
-class FoundViewController: UIViewController {
-
+class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    @IBOutlet weak var tableView: UITableView!
+    
+    var list: [Item] = []
+    var name: String = ""
+    var location: String = ""
+    
+    let itemRetreiver: ItemRetriever = ItemRetriever()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        
+        self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "itemCell")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func getItems() {
+        itemRetreiver.getItems(block: { (itemList, error) in
+            if(itemList != nil) {
+                self.list = []
+                let obj: AnyObject = itemList!["response"]!
+                let result: AnyObject = obj["venues"] as AnyObject
+                
+                if(!result .isKind(of: NSNull.classForCoder())) {
+                    let venues: Array = (result as! NSArray) as Array
+                    
+                    venues.forEach({ (object: AnyObject) in
+                        let item: Item = Item(object: object)
+                        self.list.append(item)
+                    })
+                }
+                
+                DispatchQueue.main.async(execute: {
+                    self.tableView.reloadData()
+                })
+            }
+        }, name: self.name, location: self.location)
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        
+        cell.textLabel?.text = self.list[indexPath.row].name
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /*let item = self.list[indexPath.row]
+        let itemController = ItemViewController(nibName: "ItemViewController", bundle: nil, item: item)
+        
+        self.navigationController?.pushViewController(itemController, animated: true)*/
+    }
 }
