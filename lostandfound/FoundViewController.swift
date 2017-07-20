@@ -24,7 +24,8 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.trainstation.delegate = self
+        //self.trainstation.delegate = self
+        let naviController = UINavigationController(rootViewController: self)
         
         self.tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "itemCell")
         getItems()
@@ -84,7 +85,10 @@ class FoundViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.list[indexPath.row]
         let itemController = ItemViewController(nibName: "ItemViewController", bundle: nil, item: item)
+        //NSLog("J'ai cliquéééééééééééééé")
+        //self.present(ItemViewController(coder: NSCoder())!, animated: true, completion:nil);
         
-        self.navigationController?.pushViewController(itemController, animated: true)
+        //self.navigationController?.pushViewController(itemController, animated: true)
+        self.naviController.pushViewController(itemController, animated:true)
     }
 }
